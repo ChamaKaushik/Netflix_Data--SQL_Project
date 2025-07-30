@@ -186,18 +186,17 @@ WHERE
 
 ```sql
 SELECT 
-    title, new_duration
-FROM
-    (SELECT 
-        type,
-            title,
-            SUBSTRING_INDEX(duration, ' ', 1) AS new_duration
-    FROM
-        netflix
-    WHERE
-        type = 'tv show') AS t1
-WHERE
-    new_duration > 5;
+    title, 
+    new_duration
+FROM (
+    SELECT 
+        type, 
+        title, 
+        SUBSTRING_INDEX(duration, ' ', 1) AS new_duration
+    FROM netflix
+    WHERE type = 'TV Show'
+) AS t1
+WHERE new_duration > 5;
 ```
 
 **Objective:** Identify TV shows with more than 5 seasons.
