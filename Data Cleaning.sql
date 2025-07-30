@@ -45,3 +45,4 @@ select * from netflix_clean  ;
 -- date_added	              Exclude from time-based analysis, or flag
 
 commit ;
+
